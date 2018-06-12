@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- The Below CSS Is To Load Bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style>
+        .navbar {
+            border-radius: 0;
+        }
+    </style>
+
+    <!-- The Below JS Is For Anuglar -->
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <!-- The Below JS Is For ui-router -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <!-- The Below app.js File Is To Define The Angular Application And Routings -->
+    <script src="app.js"></script>
+    <!-- The Below js Files Are The Content That We Inject In Single Page Application -->
+    <script src="Controllers/Search.js"></script>
+    <script src="Controllers/AddRemove.js"></script>
+</head>
+
+<!-- Applying Root Element Of AngularJS To HTML Body -->
+<body ng-app="AngularRoutingApplication">
+
+    <!-- Navigation Menubar -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <ul class="nav navbar-nav">
+            <li><a ui-sref="home" ui-sref-active="active">Home</a></li>
+            <li><a ui-sref="search" ui-sref-active="active">Search</a></li>
+            <li><a ui-sref="addremove" ui-sref-active="active">AddRemove</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- The Content Will Inject Here -->
+        <div ui-view></div>
+
+    </div>
+
+</body>
+</html>

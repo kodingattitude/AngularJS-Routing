@@ -1,0 +1,43 @@
+﻿<div class="form-group container">
+    <div class="row">
+        <h3>AngularJS - Add And Remove/Delete Item From List</h3>
+    </div>
+    <div class="row" style="position:relative;">
+        <div class="col-md-3">
+            <label>Item Code</label>
+            <input type="text" name="itemcode" class="form-control" id="itemcode" ng-model="ItemCode" />
+        </div>
+        <div class="col-md-3">
+            <label>Item Name</label>
+            <input type="text" name="itemname" class="form-control" id="itemname" ng-model="ItemName" />
+        </div>
+        <div class="col-md-3">
+            <label>Item Description</label>
+            <input type="text" name="itemdescription" class="form-control" id="itemdescription" ng-model="ItemDescription" />
+        </div>
+        <div class="col-md-3" style="position:absolute;right:0;bottom:0;">
+            <button type="button" name="addtolist" class="btn btn-primary" id="addtolist" ng-click="AddToList()">Add To List</button>
+        </div>
+    </div>
+    <span ng-show="showspan" style="font-size:medium;color:red">{{warningmsg}}</span>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Item Code</th>
+                        <th>Item Name</th>
+                        <th>Item Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tr ng-repeat="item in ItemDetails">
+                    <td>{{ item.ItemCode}}</td>
+                    <td>{{ item.ItemName}}</td>
+                    <td>{{ item.ItemDescription}}</td>
+                    <td><button type="button" name="delete" class="btn btn-danger" ng-click="DeleteItem(item)">Delete</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
